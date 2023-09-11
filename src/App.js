@@ -1,24 +1,21 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
-
+import { Assesment } from './milestone/milestone';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter,Routes,Route } from 'react-router-dom';
+import { Menu } from './milestone/menu';
+import { Mile1 } from './milestone1';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <>
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Menu/>}/>
+      <Route path="/mile" element={[<Assesment/>]}/>
+      <Route path="/miles/:id" element={[<Mile1/>]}/>
+    </Routes>
+   </BrowserRouter>
+  </>
   );
 }
 
